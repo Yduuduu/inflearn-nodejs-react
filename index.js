@@ -12,6 +12,7 @@ app.use(bodyPareser.urlencoded({extended: true}));
 // aplication/json
 app.use(bodyPareser.json());
 
+
 const mongoose = require('mongoose')
 mongoose.connect(config.mongoURI,{
     /*useNewUrlParser: true, useUnifiendTopology: true, useCreateIndex: true, useFindAndModify: false*/
