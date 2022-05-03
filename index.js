@@ -9,7 +9,6 @@ const config = require('./config/key');
 // application/x-ww-form-urlencoded
 app.use(bodyPareser.urlencoded({extended: true}));
 
-
 // aplication/json
 app.use(bodyPareser.json());
 
