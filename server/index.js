@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const port = 5000
 const bodyPareser = require('body-parser'); //req.body로 클라이언트에 보내는 정보를 받아준다
 const cookiePareser = require('cookie-parser');
 const config = require('./config/key');
@@ -22,6 +21,10 @@ mongoose.connect(config.mongoURI,{
   .catch(err=>console.log(err))
 
 app.get('/', (req, res) => { res.send('Hello World!! 안녕!') })
+
+app.get('/api/hello', (req, res) => 
+  { res.send('안녕!') 
+})
 
 app.post('/api/user/register',(req,res)=>{
   // 회원가입 할때 필요한 정보들을 client에서 가져오면
@@ -90,4 +93,5 @@ app.get('/api/users/logout', auth, (req, res) => {
     })
 })
 
+const port = 5000
 app.listen(port, () => { console.log(`Example app listening on port ${port}`) })
